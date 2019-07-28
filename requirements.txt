@@ -1,0 +1,3 @@
+pandas == 0.25.0
+sodapy == 1.5.4
+tweepy == 3.8.0
