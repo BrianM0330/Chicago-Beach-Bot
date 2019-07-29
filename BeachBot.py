@@ -2,7 +2,13 @@ import tweepy
 import pandas as pd
 from random import randrange
 from sodapy import Socrata
-from keys import *
+from os import environ
+
+#used for heroku deployment
+CONSUMER_KEY = environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
 
 # authenticate to twitter
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
