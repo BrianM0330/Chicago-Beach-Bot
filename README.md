@@ -8,7 +8,7 @@ streaming API. On mention, it will send a request to Chicago's SODA API (https:/
 and parse the JSON file for the requested name of the beach. It then replies to the user with the predicted daily value of CFU.
 # Why?
 This Summer has seen an increasing amount of beach closures due to high levels of E.Coli levels measured in colony forming units/100mL. When levels exceed 235 CFU the beach is shut down. 
-The data is very easily accessible, and the City of Chicago actually provides a fairly intuitive way for people to check if a beach [is open or closed](https://www.chicagoparkdistrict.com/parks-facilities/beaches). I created this bot with the intention of making it
+The data is very easily accessible, and the City of Chicago actually provides a fairly intuitive way for people to check if a beach [is open or closed](https://www.chicagoparkdistrict.com/parks-facilities/beaches). But many people aren't aware of it as it isn't a topic that's talked about too often in the news. I created this bot with the intention of making it
 easier for an average person to quickly find information on a beach using Twitter, the social platform where a bot like this actually has a use.
 # How can I make one for my city?
 If there is any similar data provided by your city through Socrata, most of the modifications should be in the `process_data` function. 
