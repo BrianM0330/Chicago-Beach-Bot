@@ -49,6 +49,7 @@ class MyStreamListener(tweepy.StreamListener):
 		tag_number = randrange(1, 10)   # used to prevent duplicate tweet error
 		list_of_names = list(self.beaches.keys())
 		replied = False     # breaks the loop to prevent infinite replies
+		found = True
 
 		self.tweet = status.text.lower().split()
 		print(self.tweet)
@@ -65,7 +66,7 @@ class MyStreamListener(tweepy.StreamListener):
 								format(self.beach_to_parse, self.status, self.predicted_level, 235, tag_number),
 							in_reply_to_status_id=status.id, auto_populate_reply_metadata = True
 						)
-						replied = True
+						replied, found = True, True
 					elif float(self.predicted_level) <= 220:
 						self.status = "on the edge today"
 						api.update_status(
@@ -73,7 +74,7 @@ class MyStreamListener(tweepy.StreamListener):
 								format(self.beach_to_parse, self.status, self.predicted_level, 235, tag_number),
 							in_reply_to_status_id=status.id, auto_populate_reply_metadata = True
 						)
-						replied = True
+						replied, found = True, True
 					elif float(self.predicted_level) >= 235:
 						self.status = "dangerous. It should be closed."
 						api.update_status(
@@ -81,7 +82,14 @@ class MyStreamListener(tweepy.StreamListener):
 								format(self.beach_to_parse, self.status, self.predicted_level, 235, tag_number),
 							in_reply_to_status_id=status.id, auto_populate_reply_metadata = True
 						)
-						replied = True
+						replied, found = True, True
+			if not found:
+				api.update_status(
+					"ERROR! ERROR!"
+					"I wasn't able to find a valid beach name, if you didn't make a typo I must not have it. Sorry :(",
+					in_reply_to_status_id=status.id, auto_populate_reply_metadata=True
+				)
+				replied = True
 
 	def on_error(self, status):
 		print("Error detected")
