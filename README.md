@@ -1,7 +1,6 @@
 # Chicago-Beach-Bot
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-![Twitter URL](https://img.shields.io/twitter/url/https/ChicagoBeachBot?label=ChicagoBeachBot&style=social)
 
 This is a Twitter bot built using Tweeply for Python. This bot works on mentions to @ChicagoBeachBot using Twitter's
 streaming API. On mention, it will send a request to Chicago's SODA API (https://dev.socrata.com/foundry/data.cityofchicago.org/xvsz-3xcj)
