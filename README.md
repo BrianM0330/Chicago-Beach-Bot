@@ -12,7 +12,7 @@ easier for an average person to quickly find information on a beach using Twitte
 # How can I make one for my city?
 If there is any similar data provided by your city through Socrata, most of the modifications should be in the `process_data` function. 
 If Socrata isn't available but there is an API, I would suggest using the requests library and working off of that with Pandas.
-The `on_status ` method is part of [Tweepy](http://docs.tweepy.org/en/latest/streaming_how_to.html), and it handles the "tweeting" functionality of the bot.
+The `on_status` method is part of [Tweepy](http://docs.tweepy.org/en/latest/streaming_how_to.html), and it handles the "tweeting" functionality of the bot.
 The bot focuses on using Twitter and Tweepy's streaming api rather than fetching the data periodically. In `__init__` I initialize the beaches dictionary. This is a 
 dictionary of 'valid' beach names that is used in `on_status`. For a different city, you would just need to change the keys to the new beach names and attempt to account for 
 the short-hand way of referencing them or for the local and unofficial names. 
